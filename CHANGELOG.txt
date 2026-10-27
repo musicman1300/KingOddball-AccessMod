@@ -1,5 +1,14 @@
 King Oddball accessibility mod — CHANGELOG
 
+0.17.6
+- F10 toggles logging and research logging together for bug reports.
+  Speaks "Logging on" / "Logging off", saves both settings to KO_config.ini
+  immediately, and opens or closes KO_log.txt and KO_research.txt beside the
+  game EXE while the game is running (no restart required when the files open
+  successfully). Off by default. No keystrokes or personal information are
+  written. F10 matches the Super Chibi Knight Part 2 logging hotkey; F1–F9
+  were already taken (F9 is the unfinished-level jump).
+
 0.17.5
 - Shift+F8 toggles enemy-list speech ("Enemy speech off" / "on") and saves
   enemy_speech in KO_config.ini. F8 / Y pings keep the same timing; only the

@@ -1,4 +1,4 @@
-King Oddball Access Mod 0.17.5
+King Oddball Access Mod 0.17.6
 ==============================
 
 A screen reader accessibility mod for the Steam PC version of King Oddball.
@@ -104,6 +104,8 @@ F7   Toggle line-up tone
 F8   List enemies left to right; each name starts with a panned click from that spot (destroyed marks from destroy events)
 Shift+F8   Toggle enemy-list speech only (pings keep playing). Says "Enemy speech off" or "on"; saved as enemy_speech
 F9   Jump to next unfinished playable level (world map)
+F10  Toggle logging + research logging for bug reports (speaks Logging on/off;
+     saves to KO_config.ini; opens/closes KO_log.txt and KO_research.txt live)
 Control Shift R   Read all text on the screen
 Control Shift T   Speech test
 Control Shift U   Same as F3
@@ -165,7 +167,7 @@ lineup_window_deg=80
 lineup_lead_ms=80
 force_music_volume=0     ; keep game Options music (default)
 ; music_volume=50        ; only when force_music_volume=1
-logging=0                ; KO_log.txt off by default
+logging=0                ; KO_log.txt off by default; F10 toggles with research_log
 research_log=0
 speech_backend=auto      ; auto | jaws | nvda | sapi
 
@@ -190,7 +192,8 @@ Troubleshooting
   KingOddball.exe.
 - Music hotkeys do nothing until Options music is ready: open Options once, or
   wait until the title has finished loading.
-- Logging: leave logging=0 unless you are sending a bug report. research_log
+- Logging: leave logging=0 unless you are sending a bug report, or press F10
+  in-game (toggles research_log too). research_log
   stays off unless you are helping develop the mod.
 
 Uninstall notes
