@@ -1,0 +1,67 @@
+King Oddball accessibility mod — CHANGELOG
+
+0.17.5
+- Shift+F8 toggles enemy-list speech ("Enemy speech off" / "on") and saves
+  enemy_speech in KO_config.ini. F8 / Y pings keep the same timing; only the
+  spoken names are muted. Explicit exception to the usual "ignore F-keys with
+  modifiers" rule (Shift+F8 only; Alt/Ctrl/Win still block).
+- Controller: Back + Right trigger does the same toggle (Back+Y stays line-up
+  tone). JAWS keymap unassigns Shift+F8 in Common, Laptop, Classic Laptop and
+  Desktop layouts.
+- World map: if an arrow or D-pad press does not move the marker, the mod says
+  "Can't move there" (game refused the step — edge or unreachable cell). An
+  in-flight review-Enter goto is cancelled so it cannot fight the arrow.
+- Kept: marker move does not auto-start a level; press Enter (or A on a
+  reviewed cell) to play. Documented in README / F1.
+
+0.17.4
+- F8 / controller Y enemy list: the panned positional beep now starts with (or
+  just before) each spoken name. Previously the list waited on an estimated
+  speech length (about 300 ms + 60 ms per character) before each beep, then
+  another 350 ms — so a typical name lagged roughly 1–1.5 seconds before its
+  click. The wait-for-speech step is gone; items now use a fixed 400 ms gap
+  between entries. A new F8 or Y still cancels the current list.
+- World map: controller A plays the reviewed cell the same way Enter does
+  (including "Locked" / "Not available"), when the review cursor is away from
+  the marker. Otherwise A is left to the game.
+- Jump to next unfinished playable level: F9 (ignored with Alt/Ctrl/Shift/Win)
+  and right-stick click on the world map. Moves the real marker via the game's
+  own cell-click handler to the next playable, unfinished cell (nearest first,
+  then onward, wrapping). Clears any pending review. Off the map: "Not on the
+  world map". None left: "No unfinished levels available".
+- Removed legacy enemy distance beacons and the F9 beacon toggle. Line-up tone
+  (F7) is unchanged.
+- Logging off by default (logging=0). research_log=0 in the dist ini.
+- Public package: install.bat / uninstall.bat, MIT LICENSE, JAWS keymap
+  (F3, Extended arrows, Enter, SpaceBar pass-through), rewritten README.
+- Works with JAWS, NVDA, and SAPI. No general keystroke logging.
+
+0.17.3
+- Lose reason: after "Level failed", speak the LosePhrase textbox.
+- Note popup: speak the Note body text.
+- F8 destroyed marks preserved across enemy-list reload; Level completed
+  reports complete; fresh attempt clears marks.
+- Level map: debounce duplicate "Level map" over announcements.
+- Xbox / XInput shortcuts for mod status keys (edge-triggered).
+- Works with JAWS, NVDA, and SAPI. No general keystroke logging.
+
+0.17.2
+- Failed release feedback: "No rocks left" or "Not ready" when Space, Enter,
+  or controller A does not release a rock.
+
+0.17.1
+- Music volume no longer overrides Options at startup (force_music_volume=0).
+- Ctrl+Shift [ / ] adjust music live and save via SaveProfiles.
+
+0.17
+- F3 / Control Shift U: neighbour / unexplored hints from the marker.
+- Music volume hotkeys. Locked cells say "Locked." first.
+
+0.16.1
+- Gentler pan, wider lineup window, latency-only lead.
+
+0.16
+- Continuous line-up tone on by default; legacy beacons/ticks off.
+
+0.12.2
+- Last widely installed build before line-up tone work.
